@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+  get 'user/new'
   get 'pages/help'
   get 'pages/index'
   root 'pages#index'
