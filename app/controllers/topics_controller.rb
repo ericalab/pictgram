@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  before_action :login_check, only: [:new, :edit, :update, :destroy]
+  # before_action :login_check, only: [:new, :edit, :update, :destroy]
   def index
     @topics = Topic.all
   end
@@ -24,9 +24,4 @@ class TopicsController < ApplicationController
     params.require(:topic).permit(:image, :description)
   end
   
-  def login_check
-  unless user_signed_in?
-    flash[:alert] = "ログインしてください"
-    redirect_to root_path
-  end
 end
