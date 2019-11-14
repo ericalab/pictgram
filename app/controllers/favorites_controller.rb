@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-    @favorite_tipics = current_user.favorite_topics
+    @favorite_topics = current_user.favorite_topics
   end
   
   def create
@@ -14,4 +14,11 @@ class FavoritesController < ApplicationController
       redirect_to topics_path, danger: 'お気に入りの登録に失敗しました'
     end
   end
+  
+  def destroy
+    @like = Favorite.find_by(user_id: current_user.id, topic_id: params[:topic_id])
+    @like.destroy
+    redirect_to("/topics/")
+  end
+  
 end
