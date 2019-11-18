@@ -19,7 +19,11 @@
               <% end %>
             <% end %>
             <%= topic.favorites.count%>
-            <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+            
+            <%= link_to topics_show_path(id: topic.id) do %>
+                <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+            <% end %>
+            
             <p class="topic-text">
               <%= topic.description %>
             </p>
@@ -27,6 +31,5 @@
         </div>
       </div>
     <% end %>
-    <%= @likes_count %>
   </div>
 </div>
