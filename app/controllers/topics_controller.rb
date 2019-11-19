@@ -24,7 +24,6 @@ class TopicsController < ApplicationController
   def show
     @topic =Topic.find_by(id: params[:id])
     @user = @topic.user
-    @likes_count = @topic.favorites.count
     @comment = Comment.new
   end 
   

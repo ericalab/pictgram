@@ -1,9 +1,8 @@
 class CommentsController < ApplicationController
   
-  
   def create
     comment = Comment.new
-    comment.comment = params[:comment][:comment]
+    comment.content = params[:comment][:content]
     comment.user_id = current_user.id
     comment.topic_id = params[:comment][:topic_id]
     

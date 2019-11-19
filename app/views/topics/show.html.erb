@@ -22,13 +22,13 @@
           </p>
         
         <%  @topic.comments.each do |comment| %>
-          <p><%= comment.comment %></p>
+          <p><%= comment.content %></p>
         <% end %>
 
         <%= form_for @comment do |f| %>
           <div class="form-group">
-            <%= f.label :comment %>
-            <%= f.text_area :comment, class: 'form-control' %>
+            <%= f.label :Comment %>
+            <%= f.text_area :content, class: 'form-control' %>
           </div>
           <%= f.hidden_field :topic_id, :value => @topic.id %>
           <%= f.submit 'コメントを追加', class: 'btn btn-black btn-block' %>
